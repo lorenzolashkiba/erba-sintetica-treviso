@@ -1461,61 +1461,190 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .savings-section {
+        padding: 2rem 0;
+    }
+
     .savings-calculator {
-        padding: 2rem 1.5rem;
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
     }
 
     .savings-calculator h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
     }
 
     .savings-subtitle {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
     }
 
     .calculator-input {
-        padding: 1.5rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .calculator-input label {
+        font-size: 1rem;
+        margin-bottom: 1rem;
     }
 
     .slider-container {
-        flex-direction: column;
+        flex-direction: row;
         gap: 1rem;
+        align-items: center;
+    }
+
+    .size-slider {
+        flex: 1;
+        height: 20px;
+        border-radius: 10px;
+    }
+
+    .size-slider::-webkit-slider-thumb {
+        width: 40px;
+        height: 40px;
+    }
+
+    .size-slider::-moz-range-thumb {
+        width: 40px;
+        height: 40px;
     }
 
     .size-display {
-        font-size: 1.5rem;
-        width: 100%;
+        font-size: 1.3rem;
+        padding: 0.3rem 1rem;
+        min-width: 90px;
+        flex-shrink: 0;
     }
 
     .savings-results {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
     }
 
     .saving-card {
-        padding: 1.5rem;
+        padding: 1rem;
+        gap: 0.8rem;
+    }
+
+    .saving-icon {
+        font-size: 2rem;
+        flex-shrink: 0;
+    }
+
+    .saving-label {
+        font-size: 0.75rem;
+        margin-bottom: 0.3rem;
     }
 
     .saving-value {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .saving-detail {
+        font-size: 0.7rem;
     }
 
     .total-savings-box {
-        flex-direction: column;
-        text-align: center;
-        padding: 1.5rem;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        padding: 1rem;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     .total-icon {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        flex-shrink: 0;
+    }
+
+    .total-label {
+        font-size: 0.85rem;
+        margin-bottom: 0.3rem;
     }
 
     .total-value {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .total-detail {
+        font-size: 0.75rem;
+        margin-top: 0.3rem;
+    }
+
+    .calculator-cta p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
     }
 
     .cta-pulse {
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+    .savings-calculator {
+        padding: 1rem 0.8rem;
+    }
+
+    .savings-calculator h2 {
+        font-size: 1.3rem;
+    }
+
+    .calculator-input {
+        padding: 0.8rem;
+    }
+
+    .size-slider {
+        height: 18px;
+    }
+
+    .size-slider::-webkit-slider-thumb {
+        width: 36px;
+        height: 36px;
+    }
+
+    .size-slider::-moz-range-thumb {
+        width: 36px;
+        height: 36px;
+    }
+
+    .size-display {
+        font-size: 1.1rem;
+        min-width: 80px;
+        padding: 0.3rem 0.8rem;
+    }
+
+    .saving-card {
+        padding: 0.8rem;
+    }
+
+    .saving-icon {
+        font-size: 1.8rem;
+    }
+
+    .saving-value {
+        font-size: 1.2rem;
+    }
+
+    .total-savings-box {
+        padding: 0.8rem;
+    }
+
+    .total-icon {
+        font-size: 2rem;
+    }
+
+    .total-value {
+        font-size: 1.5rem;
     }
 }
