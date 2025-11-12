@@ -8,7 +8,8 @@
       "Bash(brew:*)",
       "Bash(gh auth login:*)",
       "Bash(gh repo create:*)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

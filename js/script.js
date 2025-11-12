@@ -396,3 +396,96 @@ const carouselInit = () => {
 
 // Inizializza il carousel quando il DOM è pronto
 carouselInit();
+
+// ===== CALCOLATORE RISPARMIO ANIMATO =====
+const savingsCalculator = () => {
+    const slider = document.getElementById('garden-size');
+    const sizeDisplay = document.getElementById('size-value');
+    const waterSaved = document.getElementById('water-saved');
+    const timeSaved = document.getElementById('time-saved');
+    const moneySaved = document.getElementById('money-saved');
+    const totalSavings = document.getElementById('total-savings');
+
+    // Funzione per animare i numeri (contatore incrementale)
+    function animateValue(element, start, end, duration) {
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // Easing function (ease-out)
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(start + (end - start) * easeOut);
+
+            // Formatta il numero con separatore migliaia
+            element.textContent = current.toLocaleString('it-IT');
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    // Funzione per calcolare i risparmi
+    function calculateSavings(squareMeters) {
+        // Calcoli basati su dati realistici
+        const waterPerYear = squareMeters * 150; // 150 litri/mq/anno
+        const hoursPerYear = Math.round(squareMeters * 1.5); // 1.5 ore/mq/anno (taglio + manutenzione)
+        const costsPerYear = Math.round(squareMeters * 8); // €8/mq/anno (acqua + taglio + concime + fertilizzante)
+        const total10Years = costsPerYear * 10;
+
+        return {
+            water: waterPerYear,
+            hours: hoursPerYear,
+            money: costsPerYear,
+            total: total10Years
+        };
+    }
+
+    // Handler per il cambiamento dello slider
+    function handleSliderChange() {
+        const mq = parseInt(slider.value);
+        sizeDisplay.textContent = mq;
+
+        const savings = calculateSavings(mq);
+
+        // Anima tutti i valori
+        animateValue(waterSaved, 0, savings.water, 1000);
+        animateValue(timeSaved, 0, savings.hours, 1000);
+        animateValue(moneySaved, 0, savings.money, 1200);
+        animateValue(totalSavings, 0, savings.total, 1500);
+
+        // Aggiungi effetto "pop" alle card
+        document.querySelectorAll('.saving-card').forEach((card, index) => {
+            card.style.animation = 'none';
+            setTimeout(() => {
+                card.style.animation = `cardPop 0.5s ease ${index * 0.1}s`;
+            }, 10);
+        });
+
+        // Effetto glow sulla box totale
+        const totalBox = document.querySelector('.total-savings-box');
+        totalBox.style.animation = 'none';
+        setTimeout(() => {
+            totalBox.style.animation = 'glowPulse 1.5s ease 0.3s';
+        }, 10);
+    }
+
+    // Event listener per lo slider
+    if (slider) {
+        slider.addEventListener('input', handleSliderChange);
+
+        // Inizializza con valore di default
+        handleSliderChange();
+    }
+};
+
+// Inizializza il calcolatore quando il DOM è pronto
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', savingsCalculator);
+} else {
+    savingsCalculator();
+}
