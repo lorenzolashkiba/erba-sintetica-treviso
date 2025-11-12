@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://erbasintetica.netlify.app/</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://erbasintetica.netlify.app/images/hero/erba_sintetica_azienda1.webp</image:loc>
+      <image:title>Erba Sintetica Treviso - Aziende</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://erbasintetica.netlify.app/images/hero/erba_sintetica_giardini1.webp</image:loc>
+      <image:title>Erba Sintetica per Giardini</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://erbasintetica.netlify.app/images/hero/erba_sintetica_terrazzi1.webp</image:loc>
+      <image:title>Erba Sintetica per Terrazzi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://erbasintetica.netlify.app/images/hero/erba_sintetica_piscina1.webp</image:loc>
+      <image:title>Erba Sintetica per Bordo Piscina</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://erbasintetica.netlify.app/images/hero/erba_sintetica_gioco1.webp</image:loc>
+      <image:title>Erba Sintetica per Aree Gioco</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://erbasintetica.netlify.app/images/hero/erba_sintetica_sportiva1.webp</image:loc>
+      <image:title>Erba Sintetica per Campi Sportivi</image:title>
+    </image:image>
+  </url>
+
+  <!-- Sezione Catalogo Prodotti -->
+  <url>
+    <loc>https://erbasintetica.netlify.app/#catalogo</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sezione Realizzazioni -->
+  <url>
+    <loc>https://erbasintetica.netlify.app/#realizzazioni</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sezione Servizi -->
+  <url>
+    <loc>https://erbasintetica.netlify.app/#servizi</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sezione Contatti -->
+  <url>
+    <loc>https://erbasintetica.netlify.app/#contatti</loc>
+    <lastmod>2025-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

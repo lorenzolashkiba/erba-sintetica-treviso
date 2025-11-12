@@ -1,0 +1,27 @@
+# robots.txt per Erba Sintetica Treviso
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://erbasintetica.netlify.app/sitemap.xml
+
+# Crawl-delay (opzionale, per ridurre carico server)
+Crawl-delay: 1
+
+# Blocca cartelle non necessarie per SEO
+Disallow: /js/
+Disallow: /style/
+
+# Permetti immagini
+Allow: /images/
+
+# User agents specifici
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Bingbot
+Allow: /
