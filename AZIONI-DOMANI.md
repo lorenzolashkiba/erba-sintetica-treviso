@@ -58,7 +58,7 @@
 1. Menu laterale → **"Sitemap"**
 2. In alto: "Aggiungi una nuova sitemap"
 3. Inserisci SOLO: `sitemap.xml`
-4. Clicca **"Invia"**
+4. Clicca **"Invia"** 
 
 **Se ancora dà errore:**
 - Aspetta 24-48 ore
