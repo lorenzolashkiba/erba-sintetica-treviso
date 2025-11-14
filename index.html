@@ -107,6 +107,18 @@
             width: 100%;
         }
 
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
         /* Hero Section with Image Slider */
         .hero {
             position: relative;
@@ -139,7 +151,7 @@
         }
 
         .hero-slider img.active {
-            opacity: 0.2;
+            opacity: 0.25;
         }
 
         .hero-content {
@@ -153,11 +165,11 @@
         .hero-tag {
             display: inline-block;
             padding: 0.5rem 1.5rem;
-            background: rgba(232, 245, 233, 0.9);
+            background: rgba(232, 245, 233, 0.95);
             color: #2d5f3e;
             border-radius: 50px;
             font-size: 0.85rem;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 2rem;
             letter-spacing: 0.5px;
             backdrop-filter: blur(10px);
@@ -171,6 +183,7 @@
             color: #1a1a1a;
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease;
+            text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
         }
 
         .hero .accent {
@@ -179,12 +192,13 @@
 
         .hero p {
             font-size: 1.3rem;
-            color: #666;
-            font-weight: 300;
+            color: #333;
+            font-weight: 400;
             margin-bottom: 3rem;
             max-width: 600px;
             line-height: 1.8;
             animation: fadeInUp 1s ease 0.2s backwards;
+            text-shadow: 0 1px 4px rgba(255, 255, 255, 0.7);
         }
 
         .cta-group {
@@ -958,8 +972,32 @@
         }
 
         @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: block;
+            }
+
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
             }
 
             .hero h1 {
@@ -1381,6 +1419,9 @@
     <!-- Navigation -->
     <nav>
         <div class="logo">Erba Sintetica Treviso</div>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
         <ul class="nav-links">
             <li><a href="#chi-siamo">Chi Siamo</a></li>
             <li><a href="#catalogo-prodotti">Catalogo</a></li>
@@ -1837,10 +1878,10 @@
         <div class="container">
             <h2>I Nostri Servizi</h2>
             <ul>
-                <li><i class="fas fa-check"></i> Sopralluogo e preventivo gratuito e senza impegno per la tua <strong>erba sintetica a Treviso</strong>.</li>
+                <li><i class="fas fa-check"></i> Sopralluogo e preventivo gratuito e senza impegno per la tua erba sintetica a Treviso.</li>
                 <li><i class="fas fa-check"></i> Consulenza personalizzata per la scelta del prodotto più adatto alle tue esigenze.</li>
                 <li><i class="fas fa-check"></i> Preparazione del terreno e smaltimento del vecchio prato.</li>
-                <li><i class="fas fa-check"></i> <strong>Posa in opera professionale</strong> a regola d'arte del tuo <strong>prato sintetico a Treviso</strong>.</li>
+                <li><i class="fas fa-check"></i> Posa in opera professionale a regola d'arte del tuo prato sintetico a Treviso.</li>
                 <li><i class="fas fa-check"></i> Assistenza post-vendita e garanzia sui prodotti.</li>
                 <li><i class="fas fa-check"></i> Progettazione del tuo prato.</li>
             </ul>
@@ -1915,6 +1956,32 @@
 
     <script src="js/script.js"></script>
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const menuIcon = mobileMenuToggle.querySelector('i');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Toggle icon between bars and times (X)
+            if (navLinks.classList.contains('active')) {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-times');
+            } else {
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.classList.remove('fa-times');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
         // Hero Image Slider
         const heroImages = document.querySelectorAll('.hero-slider img');
         let currentHeroIndex = 0;
