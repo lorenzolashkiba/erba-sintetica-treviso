@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erba Sintetica Treviso - Bold & Fun Edition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: #FFF5E1;
+            color: #2d1b00;
+            overflow-x: hidden;
+        }
+
+        /* Shapes Background */
+        .bg-shapes {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.6;
+            animation: float-shapes 15s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #FF6B9D 0%, #C06C84 100%);
+            border-radius: 50%;
+            top: 10%;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            top: 50%;
+            right: -50px;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #FFD93D 0%, #FFA500 100%);
+            border-radius: 50% 50% 0 50%;
+            bottom: 10%;
+            left: 5%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float-shapes {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(50px, -30px) rotate(90deg);
+            }
+            50% {
+                transform: translate(-30px, 50px) rotate(180deg);
+            }
+            75% {
+                transform: translate(20px, -40px) rotate(270deg);
+            }
+        }
+
+        /* Header Fun */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo-fun {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FF6B9D 0%, #4ECDC4 50%, #FFD93D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-fun {
+            padding: 0.8rem 2rem;
+            background: linear-gradient(135deg, #FF6B9D 0%, #C06C84 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-fun:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 25px rgba(255, 107, 157, 0.6);
+        }
+
+        /* Hero Fun */
+        .hero-fun {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 5% 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content-fun {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text-fun h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 5.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: #2d1b00;
+        }
+
+        .rainbow-text {
+            background: linear-gradient(90deg, #FF6B9D 0%, #4ECDC4 50%, #FFD93D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow 3s infinite;
+        }
+
+        @keyframes rainbow {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .hero-text-fun p {
+            font-size: 1.3rem;
+            color: #5d4037;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .badges {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge-pink {
+            background: linear-gradient(135deg, #FF6B9D 0%, #F06292 100%);
+            color: white;
+        }
+
+        .badge-cyan {
+            background: linear-gradient(135deg, #4ECDC4 0%, #26C6DA 100%);
+            color: white;
+        }
+
+        .badge-yellow {
+            background: linear-gradient(135deg, #FFD93D 0%, #FFC107 100%);
+            color: #2d1b00;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn-large-pink {
+            padding: 1.3rem 3rem;
+            background: linear-gradient(135deg, #FF6B9D 0%, #C06C84 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+        }
+
+        .btn-large-cyan {
+            padding: 1.3rem 3rem;
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(78, 205, 196, 0.4);
+        }
+
+        .btn-large-pink:hover,
+        .btn-large-cyan:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Visual Card Fun */
+        .visual-fun {
+            position: relative;
+        }
+
+        .card-stack {
+            position: relative;
+        }
+
+        .fun-card {
+            background: white;
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+            transform: rotate(-3deg);
+        }
+
+        .fun-card-2 {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            border-radius: 30px;
+            z-index: -1;
+            transform: rotate(3deg);
+        }
+
+        .fun-stat {
+            margin-bottom: 2.5rem;
+        }
+
+        .fun-stat-num {
+            font-size: 4rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FF6B9D 0%, #4ECDC4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .fun-stat-label {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Features Fun */
+        .features-fun {
+            padding: 8rem 5%;
+            background: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title-fun {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #2d1b00;
+        }
+
+        .section-subtitle-fun {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 5rem;
+        }
+
+        .features-grid-fun {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .feature-card-fun {
+            background: white;
+            border-radius: 25px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .feature-card-fun:nth-child(1) {
+            border-color: #FF6B9D;
+        }
+
+        .feature-card-fun:nth-child(2) {
+            border-color: #4ECDC4;
+        }
+
+        .feature-card-fun:nth-child(3) {
+            border-color: #FFD93D;
+        }
+
+        .feature-card-fun:hover {
+            transform: translateY(-10px) rotate(2deg);
+        }
+
+        .feature-emoji {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card-fun h3 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card-fun p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Pricing Fun */
+        .pricing-fun {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, #FFF5E1 0%, #FFE8CC 100%);
+        }
+
+        .pricing-cards-fun {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 4rem auto 0;
+        }
+
+        .price-card-fun {
+            background: white;
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .price-card-fun:nth-child(1) {
+            border-top: 5px solid #FF6B9D;
+        }
+
+        .price-card-fun:nth-child(2) {
+            border-top: 5px solid #4ECDC4;
+            transform: scale(1.05);
+        }
+
+        .price-card-fun:nth-child(3) {
+            border-top: 5px solid #FFD93D;
+        }
+
+        .price-card-fun:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .price-emoji {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-name-fun {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-amount-fun {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #FF6B9D 0%, #4ECDC4 50%, #FFD93D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .price-period-fun {
+            color: #999;
+            margin-bottom: 2rem;
+        }
+
+        .price-features-fun {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .price-features-fun li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .price-features-fun li i {
+            color: #4ECDC4;
+            font-size: 1.2rem;
+        }
+
+        .btn-price-fun {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-price-fun:hover {
+            transform: scale(1.05);
+        }
+
+        /* CTA Fun */
+        .cta-fun {
+            padding: 8rem 5%;
+            background: linear-gradient(135deg, #FF6B9D 0%, #4ECDC4 50%, #FFD93D 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-fun h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-fun p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .btn-white {
+            padding: 1.5rem 4rem;
+            background: white;
+            color: #FF6B9D;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-white:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            background: #2d1b00;
+            color: white;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content-fun {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text-fun h1 {
+                font-size: 3.5rem;
+            }
+
+            .features-grid-fun,
+            .pricing-cards-fun {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Shapes -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-fun">🌿 Erba Sintetica Treviso</div>
+            <button class="btn-fun">☎️ 327 410 5610</button>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-fun">
+        <div class="hero-content-fun">
+            <div class="hero-text-fun">
+                <h1>
+                    Trasforma il tuo giardino in un<br>
+                    <span class="rainbow-text">paradiso verde!</span>
+                </h1>
+                <p>
+                    Erba sintetica super morbida, ultra resistente e incredibilmente realistica.
+                    Dì addio al taglio dell'erba e goditi il tuo spazio esterno 365 giorni l'anno! 🎉
+                </p>
+
+                <div class="badges">
+                    <div class="badge badge-pink">
+                        <i class="fas fa-shield-alt"></i>
+                        Garanzia 10 anni
+                    </div>
+                    <div class="badge badge-cyan">
+                        <i class="fas fa-leaf"></i>
+                        100% Eco-Friendly
+                    </div>
+                    <div class="badge badge-yellow">
+                        <i class="fas fa-star"></i>
+                        500+ Clienti Felici
+                    </div>
+                </div>
+
+                <div class="cta-buttons">
+                    <button class="btn-large-pink">🚀 Preventivo Gratis</button>
+                    <button class="btn-large-cyan">👀 Guarda i Lavori</button>
+                </div>
+            </div>
+
+            <div class="visual-fun">
+                <div class="card-stack">
+                    <div class="fun-card-2"></div>
+                    <div class="fun-card">
+                        <div class="fun-stat">
+                            <div class="fun-stat-num">€4,000</div>
+                            <div class="fun-stat-label">💰 Risparmiati in 10 anni</div>
+                        </div>
+                        <div class="fun-stat">
+                            <div class="fun-stat-num">7,500L</div>
+                            <div class="fun-stat-label">💧 Acqua risparmiata/anno</div>
+                        </div>
+                        <div class="fun-stat">
+                            <div class="fun-stat-num">0</div>
+                            <div class="fun-stat-label">⏰ Ore di manutenzione</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features-fun">
+        <h2 class="section-title-fun">Perché Amerai la Tua Nuova Erba 💚</h2>
+        <p class="section-subtitle-fun">Tutti i vantaggi, zero svantaggi!</p>
+
+        <div class="features-grid-fun">
+            <div class="feature-card-fun">
+                <span class="feature-emoji">🌟</span>
+                <h3>Sempre Perfetta</h3>
+                <p>
+                    Verde brillante 365 giorni l'anno. Pioggia, sole, neve?
+                    Non importa! Il tuo prato sarà sempre impeccabile.
+                </p>
+            </div>
+
+            <div class="feature-card-fun">
+                <span class="feature-emoji">💰</span>
+                <h3>Risparmio Garantito</h3>
+                <p>
+                    Zero spese per taglio, irrigazione, concime e fertilizzanti.
+                    Si ripaga da sola in pochi anni!
+                </p>
+            </div>
+
+            <div class="feature-card-fun">
+                <span class="feature-emoji">👶</span>
+                <h3>Sicura per Tutti</h3>
+                <p>
+                    Perfetta per bambini e animali domestici.
+                    Morbida, igienica e completamente atossica.
+                </p>
+            </div>
+
+            <div class="feature-card-fun">
+                <span class="feature-emoji">⚡</span>
+                <h3>Installazione Rapida</h3>
+                <p>
+                    Il nostro team completa il lavoro in 2-3 giorni.
+                    Veloce, pulito, professionale!
+                </p>
+            </div>
+
+            <div class="feature-card-fun">
+                <span class="feature-emoji">🌍</span>
+                <h3>Eco-Friendly</h3>
+                <p>
+                    Risparmia migliaia di litri d'acqua ogni anno.
+                    Zero pesticidi e prodotti chimici.
+                </p>
+            </div>
+
+            <div class="feature-card-fun">
+                <span class="feature-emoji">🛡️</span>
+                <h3>Garanzia 10 Anni</h3>
+                <p>
+                    Copertura completa su materiali e installazione.
+                    Dormi sonni tranquilli!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-fun">
+        <h2 class="section-title-fun">Scegli il Tuo Stile 🎨</h2>
+        <p class="section-subtitle-fun">Prezzi trasparenti, qualità garantita</p>
+
+        <div class="pricing-cards-fun">
+            <div class="price-card-fun">
+                <div class="price-emoji">🌱</div>
+                <div class="price-name-fun">Comfort</div>
+                <div class="price-amount-fun">€40</div>
+                <div class="price-period-fun">al metro quadro</div>
+                <ul class="price-features-fun">
+                    <li><i class="fas fa-check-circle"></i> Altezza 25mm</li>
+                    <li><i class="fas fa-check-circle"></i> Perfetto per terrazzi</li>
+                    <li><i class="fas fa-check-circle"></i> Drenaggio veloce</li>
+                    <li><i class="fas fa-check-circle"></i> Garanzia 10 anni</li>
+                </ul>
+                <button class="btn-price-fun">Scelgo Comfort 🚀</button>
+            </div>
+
+            <div class="price-card-fun">
+                <div class="price-emoji">💎</div>
+                <div class="price-name-fun">Premium</div>
+                <div class="price-amount-fun">€47</div>
+                <div class="price-period-fun">al metro quadro</div>
+                <ul class="price-features-fun">
+                    <li><i class="fas fa-check-circle"></i> Altezza 35mm</li>
+                    <li><i class="fas fa-check-circle"></i> Ultra realistico</li>
+                    <li><i class="fas fa-check-circle"></i> Pet-friendly</li>
+                    <li><i class="fas fa-check-circle"></i> Garanzia 10 anni</li>
+                </ul>
+                <button class="btn-price-fun">Scelgo Premium ⭐</button>
+            </div>
+
+            <div class="price-card-fun">
+                <div class="price-emoji">👑</div>
+                <div class="price-name-fun">Luxury</div>
+                <div class="price-amount-fun">€53</div>
+                <div class="price-period-fun">al metro quadro</div>
+                <ul class="price-features-fun">
+                    <li><i class="fas fa-check-circle"></i> Altezza 50mm</li>
+                    <li><i class="fas fa-check-circle"></i> Top di gamma</li>
+                    <li><i class="fas fa-check-circle"></i> Morbidezza extra</li>
+                    <li><i class="fas fa-check-circle"></i> Garanzia 10 anni</li>
+                </ul>
+                <button class="btn-price-fun">Scelgo Luxury 💫</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-fun">
+        <h2>Pronto a Fare il Grande Salto? 🎉</h2>
+        <p>Preventivo gratuito in 24 ore, zero impegno, massima trasparenza!</p>
+        <button class="btn-white">✨ Sì, Voglio il Preventivo!</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Erba Sintetica Treviso - Made with 💚 in Veneto</p>
+    </footer>
+
+    <script>
+        // Demo interaction
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                alert('Demo - Funzionalità da collegare al sito principale!');
+            });
+        });
+    </script>
+</body>
+</html>

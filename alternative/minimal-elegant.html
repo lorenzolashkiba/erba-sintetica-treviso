@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erba Sintetica Treviso - Minimal Edition</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        /* Header Minimal */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 8%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #f0f0f0;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+
+        header.scrolled {
+            padding: 1rem 8%;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #2d5f3e;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2d5f3e;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Minimal */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 10rem 8% 6rem;
+            background: linear-gradient(135deg, #f8faf8 0%, #ffffff 100%);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: #e8f5e9;
+            color: #2d5f3e;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            color: #1a1a1a;
+            letter-spacing: -3px;
+        }
+
+        .hero .accent {
+            color: #2d5f3e;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 600px;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .btn-primary-minimal {
+            padding: 1.2rem 3rem;
+            background: #2d5f3e;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary-minimal:hover {
+            background: #1f4429;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(45, 95, 62, 0.2);
+        }
+
+        .btn-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .btn-link:hover {
+            gap: 1rem;
+            color: #2d5f3e;
+        }
+
+        /* Stats Minimal */
+        .stats {
+            padding: 6rem 8%;
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 0;
+            border-top: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #2d5f3e;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Features Minimal */
+        .features {
+            padding: 8rem 8%;
+            background: #fafafa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .section-tag {
+            color: #2d5f3e;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-minimal {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-minimal:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-number {
+            font-size: 0.9rem;
+            color: #2d5f3e;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-minimal h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .feature-minimal p {
+            color: #666;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Showcase */
+        .showcase {
+            padding: 8rem 8%;
+            background: white;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .showcase-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .showcase-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .showcase-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .showcase-list {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .showcase-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #333;
+        }
+
+        .showcase-list li i {
+            color: #2d5f3e;
+            font-size: 1.2rem;
+        }
+
+        /* Pricing Minimal */
+        .pricing {
+            padding: 8rem 8%;
+            background: #fafafa;
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 4rem auto 0;
+        }
+
+        .price-card {
+            background: white;
+            border: 1px solid #f0f0f0;
+            border-radius: 12px;
+            padding: 3rem;
+            transition: all 0.3s;
+        }
+
+        .price-card.highlight {
+            border-color: #2d5f3e;
+            box-shadow: 0 10px 40px rgba(45, 95, 62, 0.1);
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .price-name {
+            font-size: 1.1rem;
+            color: #999;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .price-amount {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-period {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+
+        .price-features li {
+            padding: 0.8rem 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .price-features li i {
+            color: #2d5f3e;
+            margin-right: 0.8rem;
+        }
+
+        .btn-price {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            color: #1a1a1a;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .price-card.highlight .btn-price {
+            background: #2d5f3e;
+            border-color: #2d5f3e;
+            color: white;
+        }
+
+        .btn-price:hover {
+            border-color: #2d5f3e;
+            color: #2d5f3e;
+        }
+
+        /* CTA Minimal */
+        .cta-minimal {
+            padding: 8rem 8%;
+            background: white;
+            text-align: center;
+        }
+
+        .cta-minimal h2 {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+        }
+
+        .cta-minimal p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 8%;
+            background: #fafafa;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .footer-brand {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #2d5f3e;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid,
+            .showcase-grid,
+            .pricing-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="logo">Erba Sintetica Treviso</div>
+            <ul class="nav-links">
+                <li><a href="#features">Caratteristiche</a></li>
+                <li><a href="#pricing">Prezzi</a></li>
+                <li><a href="#contact">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-tag">🌿 Zero Manutenzione, Massima Qualità</div>
+            <h1>
+                Il prato perfetto.<br>
+                <span class="accent">Senza compromessi.</span>
+            </h1>
+            <p>
+                Erba sintetica premium per giardini, terrazzi e aziende.
+                Design italiano, qualità certificata, installazione professionale.
+            </p>
+            <div class="cta-group">
+                <button class="btn-primary-minimal">Richiedi Preventivo</button>
+                <a href="#" class="btn-link">
+                    Scopri come funziona
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Clienti Felici</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15,000</div>
+                <div class="stat-label">mq Installati</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Anni Garanzia</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Soddisfazione</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <div class="section-tag">Come Lavoriamo</div>
+            <h2 class="section-title">Processo Semplice,<br>Risultati Eccezionali</h2>
+            <p class="section-description">
+                Dalla consulenza alla realizzazione, ti seguiamo in ogni fase con professionalità e trasparenza.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-minimal">
+                <div class="feature-number">01</div>
+                <h3>Consulenza Personalizzata</h3>
+                <p>
+                    Sopralluogo gratuito e progettazione su misura.
+                    Scegliamo insieme il modello perfetto per le tue esigenze.
+                </p>
+            </div>
+
+            <div class="feature-minimal">
+                <div class="feature-number">02</div>
+                <h3>Preventivo Trasparente</h3>
+                <p>
+                    Nessun costo nascosto, prezzo chiaro fin da subito.
+                    Include materiali, installazione e garanzia.
+                </p>
+            </div>
+
+            <div class="feature-minimal">
+                <div class="feature-number">03</div>
+                <h3>Installazione Professionale</h3>
+                <p>
+                    Team certificato, lavoro pulito e veloce.
+                    Completiamo il progetto in 2-3 giorni.
+                </p>
+            </div>
+
+            <div class="feature-minimal">
+                <div class="feature-number">04</div>
+                <h3>Garanzia e Assistenza</h3>
+                <p>
+                    10 anni di copertura completa.
+                    Siamo sempre disponibili per qualsiasi necessità.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase -->
+    <section class="showcase">
+        <div class="showcase-grid">
+            <div class="showcase-image">
+                🌱
+            </div>
+            <div class="showcase-content">
+                <h2>Perché Scegliere l'Erba Sintetica</h2>
+                <p>
+                    Un investimento intelligente che migliora la qualità della vita
+                    e aumenta il valore della tua proprietà.
+                </p>
+                <ul class="showcase-list">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Risparmio idrico fino a 7,500 litri/anno
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Zero manutenzione (no taglio, no concime)
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Verde perfetto 365 giorni l'anno
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        Sicuro per bambini e animali domestici
+                    </li>
+                </ul>
+                <button class="btn-primary-minimal">Scopri i Modelli</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing" id="pricing">
+        <div class="section-header">
+            <div class="section-tag">Prezzi Trasparenti</div>
+            <h2 class="section-title">Scegli il Modello<br>Perfetto per Te</h2>
+        </div>
+
+        <div class="pricing-cards">
+            <div class="price-card">
+                <div class="price-name">Comfort</div>
+                <div class="price-amount">€40</div>
+                <div class="price-period">al metro quadro</div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Altezza 25mm</li>
+                    <li><i class="fas fa-check"></i> Ideale terrazzi</li>
+                    <li><i class="fas fa-check"></i> Garanzia 10 anni</li>
+                </ul>
+                <button class="btn-price">Seleziona</button>
+            </div>
+
+            <div class="price-card highlight">
+                <div class="price-name">Premium</div>
+                <div class="price-amount">€47</div>
+                <div class="price-period">al metro quadro</div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Altezza 35mm</li>
+                    <li><i class="fas fa-check"></i> Ultra realistico</li>
+                    <li><i class="fas fa-check"></i> Garanzia 10 anni</li>
+                </ul>
+                <button class="btn-price">Seleziona</button>
+            </div>
+
+            <div class="price-card">
+                <div class="price-name">Luxury</div>
+                <div class="price-amount">€53</div>
+                <div class="price-period">al metro quadro</div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Altezza 50mm</li>
+                    <li><i class="fas fa-check"></i> Top di gamma</li>
+                    <li><i class="fas fa-check"></i> Garanzia 10 anni</li>
+                </ul>
+                <button class="btn-price">Seleziona</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-minimal" id="contact">
+        <h2>Inizia Oggi il Tuo Progetto</h2>
+        <p>Preventivo gratuito, consulenza senza impegno</p>
+        <button class="btn-primary-minimal">☎️ 327 410 5610</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-brand">Erba Sintetica Treviso</div>
+                <p class="footer-text">
+                    Leader nell'installazione di erba sintetica premium
+                    nella provincia di Treviso e Veneto.
+                </p>
+            </div>
+            <div>
+                <div class="footer-title">Link Utili</div>
+                <ul class="footer-links">
+                    <li><a href="#">Chi Siamo</a></li>
+                    <li><a href="#">Realizzazioni</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-title">Contatti</div>
+                <ul class="footer-links">
+                    <li><a href="tel:3274105610">327 410 5610</a></li>
+                    <li><a href="#">Treviso, Italia</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
