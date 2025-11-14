@@ -572,10 +572,7 @@
             border-radius: 20px;
             padding: 2rem;
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
+            text-align: center;
         }
 
         .total-icon {
@@ -597,6 +594,10 @@
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .total-detail {
@@ -1739,10 +1740,12 @@
                 </div>
 
                 <div class="total-savings-box">
-                    <div class="total-icon">🎉</div>
                     <div class="total-content">
                         <div class="total-label">Risparmio Totale in 10 Anni</div>
-                        <div class="total-value">€<span id="total-savings">4,000</span></div>
+                        <div class="total-value">
+                            <span class="total-icon">🎉</span>
+                            <span>€<span id="total-savings">4,000</span></span>
+                        </div>
                         <div class="total-detail">L'erba sintetica si ripaga da sola in pochi anni!</div>
                     </div>
                 </div>
