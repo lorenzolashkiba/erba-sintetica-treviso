@@ -530,7 +530,7 @@
             padding: 1.5rem;
             display: flex;
             gap: 1rem;
-            align-items: flex-start;
+            align-items: center;
             transition: all 0.3s ease;
         }
 
@@ -546,6 +546,7 @@
 
         .saving-content {
             flex: 1;
+            text-align: left;
         }
 
         .saving-label {
@@ -1092,6 +1093,12 @@
                 padding: 1rem;
                 border-radius: 15px;
                 gap: 0.8rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .saving-content {
+                text-align: center;
             }
 
             .saving-icon {
