@@ -475,12 +475,28 @@
             background: #4CAF50;
         }
 
+        .size-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .size-slider::-moz-range-thumb:hover {
+            transform: scale(1.2);
+            background: #4CAF50;
+        }
+
         .size-display {
             font-size: 2rem;
             font-weight: 700;
             color: #1a1a1a;
             min-width: 120px;
             text-align: right;
+            flex-shrink: 0;
         }
 
         .savings-results {
@@ -1006,15 +1022,9 @@
                 margin-bottom: 1rem;
             }
 
-            .slider-container {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 1rem;
-            }
-
             .size-display {
-                text-align: center;
                 font-size: 1.6rem;
+                min-width: 90px;
             }
 
             .savings-results {
