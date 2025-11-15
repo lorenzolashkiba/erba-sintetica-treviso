@@ -74,4 +74,20 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Blog: Prezzi Erba Sintetica -->
+  <url>
+    <loc>https://erbasintetica.netlify.app/blog/prezzi-erba-sintetica-treviso-2025.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog: Erba Sintetica vs Naturale -->
+  <url>
+    <loc>https://erbasintetica.netlify.app/blog/erba-sintetica-vs-naturale-treviso.html</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
