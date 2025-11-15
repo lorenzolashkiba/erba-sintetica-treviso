@@ -992,13 +992,20 @@
         .blog-card-icon {
             background: linear-gradient(135deg, #2d5f3e 0%, #1f4429 100%);
             color: white;
-            padding: 2.5rem 2rem 2rem;
-            text-align: center;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .blog-card-icon i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .blog-card-icon h3 {
+            margin: 0;
+            flex: 1;
         }
 
         .blog-card-content {
@@ -2173,7 +2180,7 @@
                 <div class="blog-card">
                     <div class="blog-card-icon">
                         <i class="fas fa-euro-sign"></i>
-                        <h3 style="color: white; margin: 0;">Prezzi 2025</h3>
+                        <h3>Prezzi 2025</h3>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
@@ -2192,7 +2199,7 @@
                 <div class="blog-card">
                     <div class="blog-card-icon">
                         <i class="fas fa-balance-scale"></i>
-                        <h3 style="color: white; margin: 0;">Confronto</h3>
+                        <h3>Confronto</h3>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
@@ -2211,7 +2218,7 @@
                 <div class="blog-card">
                     <div class="blog-card-icon">
                         <i class="fas fa-book"></i>
-                        <h3 style="color: white; margin: 0;">Guida Completa</h3>
+                        <h3>Guida Completa</h3>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
