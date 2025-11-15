@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="#2d5f3e"/>
+  
+  <!-- Grass blades -->
+  <path d="M 30 70 Q 25 50 30 30" stroke="#4CAF50" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 40 70 Q 35 45 40 25" stroke="#66BB6A" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 50 70 Q 50 40 50 20" stroke="#81C784" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M 60 70 Q 65 45 60 25" stroke="#66BB6A" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 70 70 Q 75 50 70 30" stroke="#4CAF50" stroke-width="4" fill="none" stroke-linecap="round"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="70" width="100" height="30" fill="#1f4429"/>
+</svg>
