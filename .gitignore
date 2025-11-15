@@ -14,7 +14,7 @@
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
-
+.claude/*
 # Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
