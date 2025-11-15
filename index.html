@@ -963,6 +963,84 @@
             line-height: 1.8;
         }
 
+        /* Blog Section */
+        #blog {
+            background: white;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .blog-card {
+            background: #fafafa;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #4CAF50;
+        }
+
+        .blog-card-icon {
+            background: linear-gradient(135deg, #2d5f3e 0%, #1f4429 100%);
+            color: white;
+            padding: 2.5rem 2rem 2rem;
+            text-align: center;
+        }
+
+        .blog-card-icon i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-content {
+            padding: 2rem;
+        }
+
+        .blog-card-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #1a1a1a;
+            line-height: 1.4;
+        }
+
+        .blog-card-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .blog-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2d5f3e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: gap 0.3s;
+        }
+
+        .blog-read-more:hover {
+            gap: 1rem;
+        }
+
         /* Contatti */
         #contatti {
             background: #fafafa;
@@ -1171,6 +1249,19 @@
 
             .catalogo-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .blog-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .blog-meta {
+                font-size: 0.85rem;
             }
 
             /* Ottimizzazioni Calculator Mobile */
@@ -2071,6 +2162,73 @@
     </section>
 
    
+    <!-- Blog e Guide -->
+    <section id="blog">
+        <div class="container">
+            <h2>Articoli e Guide</h2>
+            <p class="section-subtitle">Scopri i nostri articoli informativi sull'erba sintetica a Treviso: prezzi, confronti, consigli e guide complete.</p>
+
+            <div class="blog-grid">
+                <!-- Blog Card 1: Prezzi -->
+                <div class="blog-card">
+                    <div class="blog-card-icon">
+                        <i class="fas fa-euro-sign"></i>
+                        <h3 style="color: white; margin: 0;">Prezzi 2025</h3>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span><i class="fas fa-clock"></i> 8 min</span>
+                            <span><i class="fas fa-calendar"></i> 15 Gen 2025</span>
+                        </div>
+                        <h3>Quanto Costa l'Erba Sintetica a Treviso?</h3>
+                        <p>Guida completa ai prezzi dell'erba sintetica nel 2025: listino prezzi, costi di posa, esempi di preventivi reali e confronto con il prato naturale.</p>
+                        <a href="blog/prezzi-erba-sintetica-treviso-2025.html" class="blog-read-more">
+                            Leggi l'articolo <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 2: Confronto -->
+                <div class="blog-card">
+                    <div class="blog-card-icon">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3 style="color: white; margin: 0;">Confronto</h3>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span><i class="fas fa-clock"></i> 10 min</span>
+                            <span><i class="fas fa-calendar"></i> 15 Gen 2025</span>
+                        </div>
+                        <h3>Erba Sintetica o Naturale? 10 Motivi per Scegliere il Sintetico</h3>
+                        <p>Confronto completo tra erba sintetica e prato naturale: vantaggi, svantaggi, risparmio economico e consigli per la scelta migliore.</p>
+                        <a href="blog/erba-sintetica-vs-naturale-treviso.html" class="blog-read-more">
+                            Leggi l'articolo <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Blog Card 3: Guida Completa -->
+                <div class="blog-card">
+                    <div class="blog-card-icon">
+                        <i class="fas fa-book"></i>
+                        <h3 style="color: white; margin: 0;">Guida Completa</h3>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-card-meta">
+                            <span><i class="fas fa-clock"></i> 15 min</span>
+                            <span><i class="fas fa-calendar"></i> 15 Gen 2025</span>
+                        </div>
+                        <h3>Erba Sintetica a Treviso: Guida Completa 2025</h3>
+                        <p>Tutto quello che devi sapere sull'erba sintetica: tipologie, installazione, manutenzione, prezzi e come scegliere il prodotto giusto.</p>
+                        <a href="guida-completa.html" class="blog-read-more">
+                            Leggi la guida <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contatti -->
     <section id="contatti">
         <div class="container">
